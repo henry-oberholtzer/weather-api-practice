@@ -8,7 +8,7 @@ export default function getWeather(city) {
         const response = JSON.parse(this.responseText);
         if (this.status === 200) {
             printElements(response, city);
-        } else if {
+        } else {
             printError(this, response, city);
         }
     });

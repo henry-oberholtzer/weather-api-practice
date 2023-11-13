@@ -8,11 +8,10 @@ export function printElements(apiResponse, city) {
     The temperature in Kelvin is ${apiResponse.main.temp} degrees.`;
 }
 
-export function printError(request, city) {
+export function printError(request, apiResponse, city) {
     document
         .querySelector('#showResponse')
         .innerText = `There was an error accessing the weather data for ${city}: ${request.status} ${request.statusText}: ${apiResponse.message}`;
-
 }
 
 function handleFormSubmission(event) {
