@@ -3,15 +3,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import getWeather from './js/weather';
 
-export function printElements(apiResponse, city) {
-    document.querySelector('#showResponse').innerText = `The humidity in ${city} is ${apiResponse.main.humidity}%.
-    The temperature in Kelvin is ${apiResponse.main.temp} degrees.`;
+export function printElements(response, city) {
+    document.querySelector('#showResponse').innerText = `The humidity in ${city} is ${response.main.humidity}%.
+    The temperature in Kelvin is ${response.main.temp} degrees.`;
 }
 
-export function printError(request, apiResponse, city) {
+export function printError(error) {
     document
         .querySelector('#showResponse')
-        .innerText = `There was an error accessing the weather data for ${city}: ${request.status} ${request.statusText}: ${apiResponse.message}`;
+        .innerText = `There was an error accessing the weather data for ${city}: ${error}.`;
 }
 
 function handleFormSubmission(event) {
